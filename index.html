@@ -22,20 +22,21 @@
         .nav-btn:active { transform: scale(0.95); }
         .nav-btn.active { background-color: #FFB6C1; color: white; border-color: #FFB6C1; }
         .sticky-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 245, 247, 0.95); backdrop-filter: blur(10px); }
+        .highlight-box { border: 2px dashed #FFB6C1; background-color: #FFF0F3; }
     </style>
 </head>
 <body class="pb-10">
 
     <div class="w-full h-56 overflow-hidden">
-        <img src="https://pbs.twimg.com/media/FvV9f07acAAXlCg?format=jpg&name=large" alt="LYKN" class="w-full h-full object-cover">
+        <img src="https://pbs.twimg.com/media/GyxiWw6acAQfSbB.jpg" alt="LYKN" class="w-full h-full object-cover">
     </div>
 
     <div class="sticky-header p-4">
         <div class="flex space-x-2 bg-white p-1 rounded-2xl shadow-inner border border-pink-100">
-            <button onclick="showSection('ticket')" id="btn-ticket" class="nav-btn active flex-1 py-3 rounded-xl text-center font-bold">
+            <button onclick="showSection('ticket')" id="btn-ticket" class="nav-btn active flex-1 py-3 rounded-xl text-center font-bold text-sm">
                 <i class="fas fa-ticket-alt mr-1"></i> 搶票網站
             </button>
-            <button onclick="showSection('quiz')" id="btn-quiz" class="nav-btn flex-1 py-3 rounded-xl text-center font-bold text-gray-400">
+            <button onclick="showSection('quiz')" id="btn-quiz" class="nav-btn flex-1 py-3 rounded-xl text-center font-bold text-sm text-gray-400">
                 <i class="fas fa-lightbulb mr-1"></i> 攻略題庫
             </button>
         </div>
@@ -45,36 +46,37 @@
         
         <section id="section-ticket" class="block space-y-4">
             <div class="app-card p-5 border-t-4 border-pink-400">
-                <h3 class="text-pink-500 font-bold mb-3"><i class="fas fa-link"></i> 購票連結</h3>
+                <h3 class="text-pink-500 font-bold mb-3 text-sm"><i class="fas fa-link"></i> 購票連結</h3>
                 <a href="https://ticketplus.com.tw/order/b415cad3ac019e9983500e48aae89f51/4f511beed6e7168df8843044bc23bd43" 
                    target="_blank"
-                   class="block bg-pink-50 text-pink-600 p-4 rounded-xl text-sm break-all border border-pink-200 active:bg-pink-100">
+                   class="block bg-pink-50 text-pink-600 p-4 rounded-xl text-xs break-all border border-pink-200 active:bg-pink-100">
                     點我跳轉 TicketPlus <i class="fas fa-external-link-alt ml-1"></i>
                 </a>
             </div>
 
             <div class="app-card p-5">
-                <h3 class="text-gray-700 font-bold mb-3"><i class="fas fa-map-marker-alt text-pink-400"></i> 目標區域 (數量*3)</h3>
+                <h3 class="text-gray-700 font-bold mb-3 text-sm"><i class="fas fa-map-marker-alt text-pink-400"></i> 目標區域 (數量*3)</h3>
                 <div class="space-y-3">
                     <div class="flex items-center justify-between bg-yellow-50 p-3 rounded-lg border border-yellow-200">
                         <span class="font-bold text-yellow-700">1. VIP $8500 區</span>
-                        <span class="bg-yellow-400 text-white px-2 py-1 rounded text-xs">優先</span>
+                        <span class="bg-yellow-400 text-white px-2 py-1 rounded text-[10px]">優先</span>
                     </div>
                     <div class="flex items-center justify-between bg-blue-50 p-3 rounded-lg border border-blue-200">
                         <span class="font-bold text-blue-700">2. A 區 $8000</span>
-                        <span class="bg-blue-400 text-white px-2 py-1 rounded text-xs">候補</span>
+                        <span class="bg-blue-400 text-white px-2 py-1 rounded text-[10px]">候補</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="section-quiz" class="hidden space-y-4">
+            
             <div class="app-card p-5 border-t-4 border-blue-300">
                 <div class="flex justify-between items-end mb-3">
-                    <h3 class="text-blue-500 font-bold"><i class="fas fa-users"></i> 成員檔案</h3>
+                    <h3 class="text-blue-500 font-bold text-sm"><i class="fas fa-users"></i> 成員檔案</h3>
                     <span class="text-[10px] text-blue-400 bg-blue-50 px-2 py-0.5 rounded-full">括號內為劇中名字</span>
                 </div>
-                <ul class="space-y-2 text-sm text-gray-600">
+                <ul class="space-y-2 text-xs text-gray-600">
                     <li class="flex justify-between border-b pb-1"><span>1. <b>Nut</b> (Jun)</span> <span>2003-04-20</span></li>
                     <li class="flex justify-between border-b pb-1"><span>2. <b>Hong</b> (Dylan)</span> <span>2003-10-16</span></li>
                     <li class="flex justify-between border-b pb-1"><span>3. <b>Tui</b> (Pepper)</span> <span>2004-03-24</span></li>
@@ -84,8 +86,8 @@
             </div>
 
             <div class="app-card p-5">
-                <h3 class="text-purple-500 font-bold mb-3"><i class="fas fa-crown"></i> 出道排名/擔當</h3>
-                <div class="grid grid-cols-2 gap-2 text-xs">
+                <h3 class="text-purple-500 font-bold mb-3 text-sm"><i class="fas fa-crown"></i> 出道排名/擔當</h3>
+                <div class="grid grid-cols-2 gap-2 text-[11px]">
                     <div class="bg-purple-50 p-2 rounded">1. William (主唱)</div>
                     <div class="bg-purple-50 p-2 rounded">2. Lego (舞擔)</div>
                     <div class="bg-purple-50 p-2 rounded">3. Tui (全能)</div>
@@ -95,52 +97,59 @@
             </div>
 
             <div class="app-card p-5">
-                <h3 class="text-orange-500 font-bold mb-3"><i class="fas fa-question-circle"></i> 必背題庫</h3>
-                <div class="space-y-3 text-sm">
+                <h3 class="text-orange-500 font-bold mb-3 text-sm"><i class="fas fa-question-circle"></i> 必背題庫</h3>
+                <div class="space-y-3">
+                    
+                    <div class="highlight-box p-3 rounded-xl text-center">
+                        <p class="text-[10px] text-pink-500 font-bold mb-1">💡 猜題目選項/預填關鍵字</p>
+                        <p class="text-2xl font-black text-pink-600 tracking-widest">LYKN</p>
+                        <p class="text-[9px] text-pink-400 mt-1">(可先熟悉鍵盤 L-Y-K-N 位置)</p>
+                    </div>
+
                     <div class="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                        <p class="text-xs text-orange-400 font-bold">Q: 最近 Solo/單曲/Let's Go 是誰？</p>
+                        <p class="text-[10px] text-orange-400 font-bold">Q: 最近 Solo/單曲/Let's Go 是哪位成員？</p>
                         <p class="text-lg font-bold text-orange-700">A: Hong</p>
                     </div>
                     
                     <div class="grid grid-cols-2 gap-2">
-                        <div class="bg-gray-50 p-2 rounded border">
+                        <div class="bg-gray-50 p-2 rounded border text-center">
                             <p class="text-[10px] text-gray-400">粉絲/娃名</p>
-                            <p class="font-bold">LYKYOU</p>
+                            <p class="font-bold text-xs">LYKYOU</p>
                         </div>
-                        <div class="bg-gray-50 p-2 rounded border">
+                        <div class="bg-gray-50 p-2 rounded border text-center">
                             <p class="text-[10px] text-gray-400">LYKYOU 眼睛顏色</p>
-                            <p class="font-bold text-blue-500">左藍 右黃</p>
+                            <p class="font-bold text-xs text-blue-500">左綠 右橘</p>
                         </div>
-                        <div class="bg-gray-50 p-2 rounded border">
+                        <div class="bg-gray-50 p-2 rounded border text-center">
                             <p class="text-[10px] text-gray-400">新團歌名稱</p>
-                            <p class="font-bold">No Way</p>
+                            <p class="font-bold text-xs">No Way</p>
                         </div>
-                        <div class="bg-gray-50 p-2 rounded border">
+                        <div class="bg-gray-50 p-2 rounded border text-center">
                             <p class="text-[10px] text-gray-400">出道曲</p>
-                            <p class="font-bold">May I?</p>
+                            <p class="font-bold text-xs">May I?</p>
                         </div>
                     </div>
 
                     <div class="space-y-2">
                         <div class="bg-white p-2 border-l-4 border-pink-300 shadow-sm">
                             <p class="text-[10px] text-gray-400">全員出演作品 / 劇中團名</p>
-                            <p class="font-bold text-gray-700">ThamePo (心跳節拍) / MARS</p>
+                            <p class="font-bold text-xs text-gray-700">ThamePo (心跳節拍) / MARS</p>
                         </div>
                         <div class="bg-white p-2 border-l-4 border-blue-300 shadow-sm">
                             <p class="text-[10px] text-gray-400">出道日</p>
-                            <p class="font-bold text-gray-700">2023/05/05</p>
+                            <p class="font-bold text-xs text-gray-700">2023/05/05</p>
                         </div>
                         <div class="bg-white p-2 border-l-4 border-purple-300 shadow-sm">
                             <p class="text-[10px] text-gray-400">選秀節目名稱</p>
-                            <p class="font-bold text-gray-700">Project Alpha</p>
+                            <p class="font-bold text-xs text-gray-700">Project Alpha</p>
                         </div>
                         <div class="bg-white p-2 border-l-4 border-red-300 shadow-sm">
                             <p class="text-[10px] text-gray-400">台灣場上一站/下一站</p>
-                            <p class="font-bold text-gray-700">東京 / 雅加達</p>
+                            <p class="font-bold text-xs text-gray-700">東京 / 雅加達</p>
                         </div>
-                        <div class="bg-red-50 p-2 rounded border border-red-100">
-                            <p class="text-[10px] text-red-400 font-bold">下一場泰國演唱會</p>
-                            <p class="font-bold text-red-700">10/24-25</p>
+                        <div class="bg-red-50 p-2 rounded border border-red-100 text-center">
+                            <p class="text-[10px] text-red-400 font-bold">下一次泰國場時間</p>
+                            <p class="font-bold text-sm text-red-700">10/24-25</p>
                         </div>
                     </div>
                 </div>
@@ -148,9 +157,8 @@
         </section>
     </div>
 
-    <footer class="mt-6 text-center text-gray-400 text-xs">
-        <p> 🍀 感謝幫搶 好人一生平安 🍀</p>
-        <p class="mt-1 italic">預填關鍵字提醒：LYKN</p>
+    <footer class="mt-6 text-center text-gray-400 text-[10px]">
+        <p>🍀 謝謝幫搶 好人一生平安 🍀</p>
     </footer>
 
     <script>

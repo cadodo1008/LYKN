@@ -23,6 +23,7 @@
         .nav-btn.active { background-color: #FFB6C1; color: white; border-color: #FFB6C1; }
         .sticky-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 245, 247, 0.95); backdrop-filter: blur(10px); }
         .highlight-box { border: 2px dashed #FFB6C1; background-color: #FFF0F3; }
+        .timer-text { font-family: monospace; }
     </style>
 </head>
 <body class="pb-10">
@@ -45,6 +46,26 @@
     <div class="px-4 mt-2">
         
         <section id="section-ticket" class="block space-y-4">
+            
+            <div class="app-card p-5 border-t-4 border-red-400">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-red-500 font-bold text-sm"><i class="fas fa-clock"></i> 搶票倒計時</h3>
+                    <span class="text-[10px] bg-red-50 text-red-500 px-2 py-0.5 rounded-full font-bold">4/19 15:00 開搶</span>
+                </div>
+                
+                <div class="bg-gray-900 text-white rounded-xl p-4 text-center">
+                    <div id="countdown" class="text-3xl font-black timer-text text-yellow-400 tracking-tighter">
+                        00:00:00:00
+                    </div>
+                    <div class="text-[10px] text-gray-400 mt-1 uppercase tracking-widest">Days : Hrs : Min : Sec</div>
+                </div>
+
+                <div class="mt-3 flex justify-between items-center bg-gray-50 p-2 rounded-lg border border-gray-100">
+                    <span class="text-xs text-gray-500">台北現在時間</span>
+                    <span id="current-time" class="text-sm font-bold text-gray-800 timer-text">--:--:--</span>
+                </div>
+            </div>
+
             <div class="app-card p-5 border-t-4 border-pink-400">
                 <h3 class="text-pink-500 font-bold mb-3 text-sm"><i class="fas fa-link"></i> 購票連結</h3>
                 <a href="https://ticketplus.com.tw/order/b415cad3ac019e9983500e48aae89f51/4f511beed6e7168df8843044bc23bd43" 
@@ -153,6 +174,33 @@
     </footer>
 
     <script>
+        function updateTimer() {
+            const target = new Date("2026/04/19 15:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+
+            // 更新現在台北時間 (精確到秒)
+            const timeOptions = { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('current-time').innerText = new Date().toLocaleTimeString('zh-TW', timeOptions);
+
+            // 更新倒計時
+            if (diff > 0) {
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').innerText = 
+                    `${d.toString().padStart(2, '0')}:${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            } else {
+                document.getElementById('countdown').innerText = "開始搶票！";
+                document.getElementById('countdown').classList.add('text-green-400');
+            }
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
         function showSection(type) {
             const ticketSec = document.getElementById('section-ticket');
             const quizSec = document.getElementById('section-quiz');

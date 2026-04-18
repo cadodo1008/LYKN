@@ -22,7 +22,12 @@
         .nav-btn:active { transform: scale(0.95); }
         .nav-btn.active { background-color: #FFB6C1; color: white; border-color: #FFB6C1; }
         .sticky-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 245, 247, 0.95); backdrop-filter: blur(10px); }
-        .highlight-box { border: 2px dashed #FFB6C1; background-color: #FFF0F3; }
+        .highlight-box { border: 2px dashed #FFB6C1; background-color: #FFF0F3; animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body class="pb-10">
@@ -71,33 +76,8 @@
 
         <section id="section-quiz" class="hidden space-y-4">
             
-            <div class="app-card p-5 border-t-4 border-blue-300">
-                <div class="flex justify-between items-end mb-3">
-                    <h3 class="text-blue-500 font-bold text-sm"><i class="fas fa-users"></i> 成員檔案</h3>
-                    <span class="text-[10px] text-blue-400 bg-blue-50 px-2 py-0.5 rounded-full">括號內為劇中名字</span>
-                </div>
-                <ul class="space-y-2 text-xs text-gray-600">
-                    <li class="flex justify-between border-b pb-1"><span>1. <b>Nut</b> (Jun)</span> <span>2003-04-20</span></li>
-                    <li class="flex justify-between border-b pb-1"><span>2. <b>Hong</b> (Dylan)</span> <span>2003-10-16</span></li>
-                    <li class="flex justify-between border-b pb-1"><span>3. <b>Tui</b> (Pepper)</span> <span>2004-03-24</span></li>
-                    <li class="flex justify-between border-b pb-1"><span>4. <b>William</b> (Thame)</span> <span>2005-02-14</span></li>
-                    <li class="flex justify-between"><span>5. <b>Lego</b> (Nano)</span> <span>2006-02-11</span></li>
-                </ul>
-            </div>
-
-            <div class="app-card p-5">
-                <h3 class="text-purple-500 font-bold mb-3 text-sm"><i class="fas fa-crown"></i> 出道排名/擔當</h3>
-                <div class="grid grid-cols-2 gap-2 text-[11px]">
-                    <div class="bg-purple-50 p-2 rounded">1. William (主唱)</div>
-                    <div class="bg-purple-50 p-2 rounded">2. Lego (舞擔)</div>
-                    <div class="bg-purple-50 p-2 rounded">3. Tui (全能)</div>
-                    <div class="bg-purple-50 p-2 rounded">4. Hong (Rap)</div>
-                    <div class="bg-purple-50 p-2 rounded">5. Nut (全能)</div>
-                </div>
-            </div>
-
-            <div class="app-card p-5">
-                <h3 class="text-orange-500 font-bold mb-3 text-sm"><i class="fas fa-question-circle"></i> 必背題庫</h3>
+            <div class="app-card p-5 border-t-4 border-orange-400">
+                <h3 class="text-orange-500 font-bold mb-3 text-sm"><i class="fas fa-bolt"></i> 搶速必背</h3>
                 <div class="space-y-3">
                     
                     <div class="highlight-box p-3 rounded-xl text-center">
@@ -129,36 +109,50 @@
                             <p class="font-bold text-xs">May I?</p>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="space-y-2">
-                        <div class="bg-white p-2 border-l-4 border-pink-300 shadow-sm">
-                            <p class="text-[10px] text-gray-400">全員出演作品 / 劇中團名</p>
-                            <p class="font-bold text-xs text-gray-700">ThamePo (心跳節拍) / MARS</p>
-                        </div>
-                        <div class="bg-white p-2 border-l-4 border-blue-300 shadow-sm">
-                            <p class="text-[10px] text-gray-400">出道日</p>
-                            <p class="font-bold text-xs text-gray-700">2023/05/05</p>
-                        </div>
-                        <div class="bg-white p-2 border-l-4 border-purple-300 shadow-sm">
-                            <p class="text-[10px] text-gray-400">選秀節目名稱</p>
-                            <p class="font-bold text-xs text-gray-700">Project Alpha</p>
-                        </div>
-                        <div class="bg-white p-2 border-l-4 border-red-300 shadow-sm">
-                            <p class="text-[10px] text-gray-400">台灣場上一站/下一站</p>
-                            <p class="font-bold text-xs text-gray-700">東京 / 雅加達</p>
-                        </div>
-                        <div class="bg-red-50 p-2 rounded border border-red-100 text-center">
-                            <p class="text-[10px] text-red-400 font-bold">下一次泰國場時間</p>
-                            <p class="font-bold text-sm text-red-700">10/24-25</p>
-                        </div>
-                    </div>
+            <div class="app-card p-5 border-t-4 border-blue-300">
+                <div class="flex justify-between items-end mb-3">
+                    <h3 class="text-blue-500 font-bold text-sm"><i class="fas fa-users"></i> 成員檔案</h3>
+                    <span class="text-[10px] text-blue-400 bg-blue-50 px-2 py-0.5 rounded-full">括號內為劇中名字</span>
+                </div>
+                <ul class="space-y-2 text-xs text-gray-600">
+                    <li class="flex justify-between border-b pb-1"><span>1. <b>Nut</b> (Jun)</span> <span>2003-04-20</span></li>
+                    <li class="flex justify-between border-b pb-1"><span>2. <b>Hong</b> (Dylan)</span> <span>2003-10-16</span></li>
+                    <li class="flex justify-between border-b pb-1"><span>3. <b>Tui</b> (Pepper)</span> <span>2004-03-24</span></li>
+                    <li class="flex justify-between border-b pb-1"><span>4. <b>William</b> (Thame)</span> <span>2005-02-14</span></li>
+                    <li class="flex justify-between"><span>5. <b>Lego</b> (Nano)</span> <span>2006-02-11</span></li>
+                </ul>
+            </div>
+
+            <div class="app-card p-5 space-y-3">
+                <div class="bg-white p-2 border-l-4 border-pink-300 shadow-sm">
+                    <p class="text-[10px] text-gray-400">全員出演作品 / 劇中團名</p>
+                    <p class="font-bold text-xs text-gray-700">ThamePo (心跳節拍) / MARS</p>
+                </div>
+                <div class="bg-white p-2 border-l-4 border-blue-300 shadow-sm">
+                    <p class="text-[10px] text-gray-400">出道日</p>
+                    <p class="font-bold text-xs text-gray-700">2023/05/05</p>
+                </div>
+                <div class="bg-white p-2 border-l-4 border-purple-300 shadow-sm">
+                    <p class="text-[10px] text-gray-400">選秀節目名稱</p>
+                    <p class="font-bold text-xs text-gray-700">Project Alpha</p>
+                </div>
+                <div class="bg-white p-2 border-l-4 border-red-300 shadow-sm">
+                    <p class="text-[10px] text-gray-400">台灣場上一站/下一站</p>
+                    <p class="font-bold text-xs text-gray-700">東京 / 雅加達</p>
+                </div>
+                <div class="bg-red-50 p-2 rounded border border-red-100 text-center">
+                    <p class="text-[10px] text-red-400 font-bold">下一次泰國場時間</p>
+                    <p class="font-bold text-sm text-red-700">10/24-25</p>
                 </div>
             </div>
         </section>
     </div>
 
     <footer class="mt-6 text-center text-gray-400 text-[10px]">
-        <p>🍀 謝謝幫搶 好人一生平安 🍀</p>
+        <p>🍀 感謝幫搶 好人一生平安 🍀</p>
     </footer>
 
     <script>
